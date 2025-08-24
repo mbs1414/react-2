@@ -1,7 +1,7 @@
 import { Grid, Drawer, Box, Fab, useMediaQuery, useTheme } from "@mui/material";
 import { grey } from "@mui/material/colors";
 import { useEffect, useState } from "react";
-import DrawerContent from "./UI/DrawerContent";
+import DrawerContent from "./DrawerContent";
 import { MenuRounded } from "@mui/icons-material";
 
 const Sidebar = ({ value, handleChange }) => {

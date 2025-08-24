@@ -17,7 +17,7 @@ import {
   FavoriteRounded,
   CopyrightRounded,
 } from "@mui/icons-material";
-import avatar from "./../../assets/Avatar.jpg";
+import avatar from "./../assets/Avatar.jpg";
 import { grey } from "@mui/material/colors";
 
 const DrawerContent = ({ value, handleChange, setDrawerOpen }) => {

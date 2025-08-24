@@ -3,7 +3,7 @@ import rtlPlugin from "@mui/stylis-plugin-rtl";
 import { CacheProvider } from "@emotion/react";
 import createCache from "@emotion/cache";
 import { prefixer } from "stylis";
-import { theme } from "../UI/theme";
+import { theme } from "./themes";
 import { Grid } from "@mui/material";
 const cacheRTL = createCache({
   key: "muirtl",
