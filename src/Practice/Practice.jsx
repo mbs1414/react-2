@@ -1,6 +1,4 @@
-import { Tab, Tabs } from "@mui/material";
 import { useState } from "react";
-import TabPanel from "../components/tabs/TabPanel";
 import TabsContainer from "./tabs/TabsContainer";
 import TabPanelsContainer from "./tabs/TabPanelsContainer";
 
