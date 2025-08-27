@@ -1,6 +1,6 @@
 import { Grid } from "@mui/material";
 
-const ContentContainer = ({ children }) => {
+const PagesContainer = ({ children }) => {
   return (
     <Grid
       size={{ xs: 12, md: 9, lg: 10 }}
@@ -10,4 +10,4 @@ const ContentContainer = ({ children }) => {
     </Grid>
   );
 };
-export default ContentContainer;
+export default PagesContainer;

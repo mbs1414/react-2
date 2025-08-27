@@ -1,30 +1,11 @@
 import { Tab, Tabs } from "@mui/material";
 import { grey } from "@mui/material/colors";
-import {
-  HomeRounded,
-  TextSnippetRounded,
-  TerminalRounded,
-  MessageRounded,
-  ConnectWithoutContactRounded,
-} from "@mui/icons-material";
 import { useContext } from "react";
 import { PortfolioContext } from "../../context";
-const tabProps = (index) => {
-  return {
-    id: `sidebar-tab-${index}`,
-    "aria-controls": `tabpanel-${index}`,
-  };
-};
+import { tabProps, tabsData } from "./../data/tabsData.sidebar";
 const SidebarTabs = () => {
   const { value, handleChange, setDrawerOpen } = useContext(PortfolioContext);
-  const tabs = [
-    { label: "خانه", icon: <HomeRounded /> },
-    { label: "درباره من", icon: <TextSnippetRounded /> },
-    { label: "نمونه کارها", icon: <TerminalRounded /> },
-    { label: "نظرات دانشجویان", icon: <MessageRounded /> },
-    { label: "ارتباط با من", icon: <ConnectWithoutContactRounded /> },
-  ];
-
+  const data = tabsData()
   return (
     <Tabs
       orientation="vertical"
@@ -34,7 +15,7 @@ const SidebarTabs = () => {
       value={value}
       onChange={handleChange}
     >
-      {tabs.map((tab, index) => (
+      {data.map((tab, index) => (
         <Tab
           label={tab.label}
           icon={tab.icon}

@@ -6,7 +6,7 @@ import { PortfolioContext } from "../../context";
 const DrawerActionButton = () => {
   const {setDrawerOpen} = useContext(PortfolioContext)
   return (
-    <Box sx={{ display: "block" }}>
+    <Box sx={{ position: "absolute" }}>
       <Fab
         aria-label="Sidebar"
         size="small"

@@ -1,21 +1,19 @@
 import { Box, Typography } from "@mui/material";
 
-const TabPanel = (props) => {
+const Page = (props) => {
   const { children, value, index, ...others } = props;
   return (
     <div
-      role="tabPanel"
+      role="Page"
       hidden={value !== index}
-      id={`tabpanel-${index}`}
+      id={`Page-${index}`}
       aria-labelledby={`sidebar-tab-${index}`}
       {...others}
     >
       {value === index && (
-        <Box sx={{ pa: 5 }}>
-          {children}
-        </Box>
+        <Box sx={{ height: "100vh", overflow: "hidden" }}>{children}</Box>
       )}
     </div>
   );
 };
-export default TabPanel;
+export default Page;
