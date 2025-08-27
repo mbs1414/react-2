@@ -1,11 +1,9 @@
-import { useMediaQuery, useTheme } from "@mui/material";
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { SidebarContent } from ".";
 import { DrawerActionButton, SidebarDrawer } from "../drawer";
-const Sidebar = ({ value, handleChange, setDrawerOpen, drawerOpen }) => {
-  const theme = useTheme();
-  const isMdScreen = useMediaQuery(theme.breakpoints.down("md"));
-
+import { PortfolioContext } from "../../context";
+const Sidebar = ({ value, handleChange, drawerOpen }) => {
+  const {setDrawerOpen,isMdScreen} = useContext(PortfolioContext)
   useEffect(() => {
     if (!isMdScreen) {
       setDrawerOpen(false);
@@ -15,11 +13,11 @@ const Sidebar = ({ value, handleChange, setDrawerOpen, drawerOpen }) => {
   return (
     <>
       {/* Fab فقط روی اسکرین کوچیک */}
-      {isMdScreen && <DrawerActionButton setDrawerOpen={setDrawerOpen} />}
+      {isMdScreen && <DrawerActionButton />}
 
       {/* نمایش Sidebar بسته به سایز */}
       {!isMdScreen ? (
-        <SidebarContent value={value} handleChange={handleChange} />
+        <SidebarContent />
       ) : (
         <SidebarDrawer
           drawerOpen={drawerOpen}

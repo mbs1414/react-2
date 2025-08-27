@@ -7,13 +7,16 @@ import {
   MessageRounded,
   ConnectWithoutContactRounded,
 } from "@mui/icons-material";
+import { useContext } from "react";
+import { PortfolioContext } from "../../context";
 const tabProps = (index) => {
   return {
     id: `sidebar-tab-${index}`,
     "aria-controls": `tabpanel-${index}`,
   };
 };
-const SidebarTabs = ({ value, handleChange, setDrawerOpen }) => {
+const SidebarTabs = () => {
+  const { value, handleChange, setDrawerOpen } = useContext(PortfolioContext);
   const tabs = [
     { label: "خانه", icon: <HomeRounded /> },
     { label: "درباره من", icon: <TextSnippetRounded /> },

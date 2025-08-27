@@ -1,7 +1,10 @@
 import { Box, Fab } from "@mui/material";
 import { MenuRounded } from "@mui/icons-material";
+import { useContext } from "react";
+import { PortfolioContext } from "../../context";
 
-const DrawerActionButton = ({ setDrawerOpen }) => {
+const DrawerActionButton = () => {
+  const {setDrawerOpen} = useContext(PortfolioContext)
   return (
     <Box sx={{ display: "block" }}>
       <Fab

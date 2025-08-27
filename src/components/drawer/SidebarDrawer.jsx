@@ -1,7 +1,10 @@
 import { Drawer } from "@mui/material";
 import SidebarContent from "../sidebar/SidebarContent";
+import { useContext } from "react";
+import { PortfolioContext } from "../../context";
 
-const SidebarDrawer = ({ drawerOpen, setDrawerOpen, value, handleChange }) => {
+const SidebarDrawer = ({ value, handleChange }) => {
+  const {drawerOpen, setDrawerOpen} = useContext(PortfolioContext)
   return (
     <Drawer
       open={drawerOpen}
