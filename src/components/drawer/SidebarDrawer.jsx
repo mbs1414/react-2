@@ -3,8 +3,8 @@ import SidebarContent from "../sidebar/SidebarContent";
 import { useContext } from "react";
 import { PortfolioContext } from "../../context";
 
-const SidebarDrawer = ({ value, handleChange }) => {
-  const {drawerOpen, setDrawerOpen} = useContext(PortfolioContext)
+const SidebarDrawer = () => {
+  const { drawerOpen, setDrawerOpen } = useContext(PortfolioContext);
   return (
     <Drawer
       open={drawerOpen}
@@ -32,11 +32,7 @@ const SidebarDrawer = ({ value, handleChange }) => {
         },
       }}
     >
-      <SidebarContent
-        value={value}
-        handleChange={handleChange}
-        setDrawerOpen={setDrawerOpen}
-      />
+      <SidebarContent />
     </Drawer>
   );
 };

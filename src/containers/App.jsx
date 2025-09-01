@@ -6,8 +6,8 @@ import { useEffect, useState } from "react";
 import Page from "../pages/components/Page";
 import SidebarContainer from "./SidebarContainer";
 import { PortfolioContext } from "../context";
-import primaryPic from "./../assets/bg01-min.jpeg";
 import { DrawerActionButton } from "../components/drawer";
+import { Home } from "../pages/components";
 const App = () => {
   const [value, setValue] = useState(0);
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -45,23 +45,7 @@ const App = () => {
         {isMdScreen && <DrawerActionButton />}
         <PagesContainer>
           <Page value={value} index={0}>
-            <Box
-              sx={{
-                backgroundImage: `url(${primaryPic})`,
-                height: "100vh",
-                backgroundPosition: "center",
-                backgroundRepeat: "no-repeat",
-                backgroundSize: "cover",
-              }}
-            >
-              <Typography
-                color="whiteSmoke"
-                variant="h5"
-                sx={{ textAlign: "center" }}
-              >
-                صفحه اصلی
-              </Typography>
-            </Box>
+            <Home />
           </Page>
         </PagesContainer>
       </MainLayout>
