@@ -1,9 +1,9 @@
 import { Box, Typography } from "@mui/material";
-import primaryPic from "./../../assets/bg02-min.jpeg";
+import primaryPic from "./../assets/bg02-min.jpeg";
 import Typed from "typed.js";
 import { useCallback, useEffect, useRef } from "react";
 import Particles from "@tsparticles/react";
-import { coloredChaos, fireworks } from "./../../constants/particles";
+import { coloredChaos, fireworks } from "./../constants/particles";
 import { loadFull } from "tsparticles";
 const Home = () => {
     const particlesInit = useCallback(async (engine) => {
@@ -57,12 +57,12 @@ const Home = () => {
           alignItems: "center",
         }}
       >
-        <Particles
+        {/* <Particles
           id="tsparticles"
           init={particlesInit}
           loaded={particlesLoaded}
           options={fireworks}
-        />
+        /> */}
         <Typography ref={nameEl} color="whiteSmoke" variant="h3"></Typography>
         <Typography
           color="whiteSmoke"

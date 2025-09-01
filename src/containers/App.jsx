@@ -1,13 +1,13 @@
-import { Box, Typography, useMediaQuery, useTheme } from "@mui/material";
+import { useMediaQuery, useTheme } from "@mui/material";
 import MainLayout from "./../layouts/MainLayout";
 import { Sidebar } from "./../components/sidebar";
 import PagesContainer from "./../containers/PagesContainer";
 import { useEffect, useState } from "react";
-import Page from "../pages/components/Page";
+import Page from "../pages/Page";
 import SidebarContainer from "./SidebarContainer";
 import { PortfolioContext } from "../context";
 import { DrawerActionButton } from "../components/drawer";
-import { Home } from "../pages/components";
+import { Home, About } from "../pages";
 const App = () => {
   const [value, setValue] = useState(0);
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -46,6 +46,9 @@ const App = () => {
         <PagesContainer>
           <Page value={value} index={0}>
             <Home />
+          </Page>
+          <Page value={value} index={1}>
+            <About />
           </Page>
         </PagesContainer>
       </MainLayout>
