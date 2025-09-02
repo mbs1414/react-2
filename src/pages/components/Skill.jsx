@@ -1,4 +1,11 @@
-import { Box, Chip, Divider, LinearProgress, Typography } from "@mui/material";
+import {
+  Badge,
+  Box,
+  Chip,
+  Divider,
+  LinearProgress,
+  Typography,
+} from "@mui/material";
 import Html from "./../../assets/icons/html5-original.svg";
 const Skill = ({ icon, color, name, value }) => {
   return (
@@ -8,6 +15,7 @@ const Skill = ({ icon, color, name, value }) => {
         sx={{
           "&::before, &::after": {
             borderColor: `${color}.main`,
+            mt: 1,
           },
         }}
       >
@@ -29,7 +37,7 @@ const Skill = ({ icon, color, name, value }) => {
           }}
         />
       </Divider>
-      <Box sx={{ display: "flex", alignItems: "center" }}>
+      <Box sx={{ display: "flex", alignItems: "center", gap:2 }}>
         <Box sx={{ width: "100%", mx: 1 }}>
           <LinearProgress
             variant="determinate"
@@ -39,9 +47,11 @@ const Skill = ({ icon, color, name, value }) => {
           />
         </Box>
         <Box sx={{ minWidth: 35 }}>
-          <Typography variant="body2" color="purple">
-            {value}
-          </Typography>
+          <Badge
+            variant="standard"
+            color={color}
+            badgeContent={`${Math.round(value)}%`}
+          ></Badge>
         </Box>
       </Box>
     </>

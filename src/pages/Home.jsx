@@ -1,17 +1,22 @@
 import { Box, Typography } from "@mui/material";
 import primaryPic from "./../assets/bg02-min.jpeg";
 import Typed from "typed.js";
-import { useCallback, useEffect, useRef } from "react";
-import Particles from "@tsparticles/react";
-import { coloredChaos, fireworks } from "./../constants/particles";
-import { loadFull } from "tsparticles";
+import { useEffect, useRef, useState } from "react";
+import Particles, { initParticlesEngine } from "@tsparticles/react";
+import { loadSlim } from "@tsparticles/slim";
+import { firefly } from "./../constants/particles";
 const Home = () => {
-    const particlesInit = useCallback(async (engine) => {
-      await loadFull(engine);
-    }, []);
-    const particlesLoaded = useCallback(async (container) => {
-      await console.log(container);
-    }, []);
+  const [init, setInit] = useState(false);
+  useEffect(() => {
+    initParticlesEngine(async (engine) => {
+      await loadSlim(engine);
+    }).then(() => {
+      setInit(true);
+    });
+  }, []);
+  const particlesLoaded = (container) => {
+    console.log(container);
+  };
 
   const nameEl = useRef(null);
   const infoEl = useRef(null);
@@ -57,12 +62,14 @@ const Home = () => {
           alignItems: "center",
         }}
       >
-        {/* <Particles
-          id="tsparticles"
-          init={particlesInit}
-          loaded={particlesLoaded}
-          options={fireworks}
-        /> */}
+        {init && (
+          <Particles
+            id="tsparticles"
+            particlesLoaded={particlesLoaded}
+            options={firefly}
+          />
+        )}
+
         <Typography ref={nameEl} color="whiteSmoke" variant="h3"></Typography>
         <Typography
           color="whiteSmoke"

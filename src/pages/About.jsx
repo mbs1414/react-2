@@ -10,7 +10,7 @@ import {
   Typography,
 } from "@mui/material";
 import { CodeRounded, SelfImprovementRounded } from "@mui/icons-material";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { PortfolioContext } from "./../context";
 import DevInfo from "./components/DevInfo";
 import Skill from "./components/Skill";
@@ -26,11 +26,43 @@ const About = () => {
     { label: "ایمیل", value: "mohammad@gmail.com" },
     { label: "شماره موبایل", value: "09017379097" },
   ];
+  const [javaScript, setJavaScript] = useState(0);
+  const [react, setReact] = useState(0);
+  const [node, setNode] = useState(0);
+  const [git, setGit] = useState(0);
+  const [html, setHtml] = useState(0);
+  const [css, setCss] = useState(0);
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setJavaScript((oldProgress) => {
+        return Math.min(oldProgress + Math.random() * 10, 85);
+      });
+      setReact((oldProgress) => {
+        return Math.min(oldProgress + Math.random() * 10, 50);
+      });
+      setNode((oldProgress) => {
+        return Math.min(oldProgress + Math.random() * 10, 40);
+      });
+      setGit((oldProgress) => {
+        return Math.min(oldProgress + Math.random() * 10, 60);
+      });
+      setHtml((oldProgress) => {
+        return Math.min(oldProgress + Math.random() * 10, 70);
+      });
+      setCss((oldProgress) => {
+        return Math.min(oldProgress + Math.random() * 10, 60);
+      });
+    }, 500);
+    return () => {
+      clearInterval(timer);
+    };
+  }, []);
   return (
     <Card
       sx={{
         height: "100vh",
         backgroundColor: "whitesmoke",
+        overflowY: "scroll",
       }}
     >
       <CardContent>
@@ -107,7 +139,42 @@ const About = () => {
                 sx={{ p: 3 }}
               />
             </Divider>
-            <Skill icon={htmlSkill.icon} color={htmlSkill.color} name={htmlSkill.name} value={95} />
+            <Skill
+              icon={htmlSkill.icon}
+              color={htmlSkill.color}
+              name={htmlSkill.name}
+              value={html}
+            />
+            <Skill
+              icon={cssSkill.icon}
+              color={cssSkill.color}
+              name={cssSkill.name}
+              value={css}
+            />
+            <Skill
+              icon={jsSkill.icon}
+              color={jsSkill.color}
+              name={jsSkill.name}
+              value={javaScript}
+            />
+            <Skill
+              icon={reactSkill.icon}
+              color={reactSkill.color}
+              name={reactSkill.name}
+              value={react}
+            />
+            <Skill
+              icon={nodeSkill.icon}
+              color={nodeSkill.color}
+              name={nodeSkill.name}
+              value={node}
+            />
+            <Skill
+              icon={gitSkill.icon}
+              color={gitSkill.color}
+              name={gitSkill.name}
+              value={git}
+            />{" "}
           </Grid>
         </Grid>
       </CardContent>

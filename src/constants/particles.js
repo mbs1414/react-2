@@ -1,99 +1,119 @@
-export const fireworks = {
-  fullScreen: { enable: true },
-  detectRetina: true,
-  background: {
-    color: "#000",
-  },
-  fpsLimit: 60,
-  emitters: {
-    direction: "top",
-    life: {
-      count: 0,
-      duration: 0.1,
-      delay: 0.1,
+export const firefly = {
+  key: "hollowknight",
+  name: "Hollow Knight",
+  interactivity: {
+    events: {
+      onHover: {
+        enable: true,
+        mode: "bubble",
+      },
     },
-    rate: {
-      delay: 0.15,
-      quantity: 1,
-    },
-    size: {
-      width: 100,
-      height: 0,
-    },
-    position: {
-      y: 100,
-      x: 50,
+    modes: {
+      bubble: {
+        distance: 40,
+        duration: 2,
+        opacity: 8,
+        size: 6,
+      },
+      connect: {
+        distance: 80,
+        links: {
+          opacity: 0.5,
+        },
+        radius: 60,
+      },
+      grab: {
+        distance: 400,
+        links: {
+          opacity: 1,
+        },
+      },
+      push: {
+        quantity: 4,
+      },
+      remove: {
+        quantity: 2,
+      },
+      repulse: {
+        distance: 200,
+        duration: 0.4,
+      },
+      slow: {
+        active: false,
+        radius: 0,
+        factor: 1,
+      },
     },
   },
   particles: {
-    number: { value: 0 },
-    destroy: {
-      mode: "split",
-      split: {
-        count: 1,
-        factor: { value: 1 / 3 },
-        rate: { value: 100 },
-        particles: {
-          stroke: {
-            color: {
-              value: ["#ffffff", "#b22234", "#3c3bfe", "#ff4081", "#ffeb3b"],
-            },
-            width: 1,
-          },
-          number: { value: 0 },
-          collisions: { enable: false },
-          opacity: {
-            value: 1,
-            animation: {
-              enable: true,
-              speed: 0.7,
-              minimumValue: 0.1,
-              startValue: "max",
-              destroy: "min",
-            },
-          },
-          shape: { type: "circle" },
-          size: {
-            value: 1,
-            animation: { enable: false },
-          },
-          life: {
-            count: 1,
-            duration: { value: { min: 1, max: 2 } },
-          },
-          move: {
-            enable: true,
-            speed: 2,
-            direction: "none",
-            random: true,
-            straight: false,
-            outMode: "destroy",
-          },
-        },
-      },
+    color: {
+      value: "#ffffff",
     },
-    life: { count: 1 },
-    shape: { type: "line" },
-    size: {
-      value: 50,
-      animation: {
-        enable: true,
-        sync: true,
-        speed: 150,
-        startValue: "max",
-        destroy: "min",
-      },
+    links: {
+      blink: false,
+      color: "#ffffff",
+      consent: false,
+      distance: 25,
+      enable: true,
+      opacity: 0.4,
+      width: 1,
     },
-    stroke: { color: { value: "#ffffff" }, width: 1 },
-    rotate: { path: true },
     move: {
       enable: true,
-      gravity: { acceleration: 15, enable: true, inverse: true, maxSpeed: 100 },
-      speed: { min: 10, max: 20 },
-      outModes: { default: "destroy", top: "none" },
-      trail: { fillColor: "#000", enable: true, length: 10 },
+      outModes: "bounce",
+      speed: 1,
+    },
+    number: {
+      density: {
+        enable: false,
+      },
+      value: 400,
+    },
+    opacity: {
+      animation: {
+        enable: true,
+        speed: 2,
+        sync: false,
+      },
+      value: {
+        min: 0.05,
+        max: 0.4,
+      },
+    },
+    shape: {
+      type: "circle",
+    },
+    size: {
+      value: 1,
     },
   },
+  polygon: {
+    draw: {
+      enable: true,
+      stroke: {
+        color: "#fff",
+        width: 0.5,
+        opacity: 0.2,
+      },
+    },
+    enable: true,
+    move: {
+      radius: 10,
+    },
+    inline: {
+      arrangement: "equidistant",
+    },
+    scale: 2,
+    type: "inline",
+    url: "https://particles.js.org/images/hollowknight.svg",
+  },
+  // background: {
+  //   color: "#000000",
+  //   image: "",
+  //   position: "50% 50%",
+  //   repeat: "no-repeat",
+  //   size: "cover",
+  // },
 };
 
 export const coloredChaos = {
