@@ -14,7 +14,6 @@ const MainLayout = ({children}) => {
   return (
     <CacheProvider value={cacheRTL}>
       <ThemeProvider theme={theme}>
-        <title>وب سایت شخصی انوش</title>
         <link rel="icon" href="/favicon/favicon.ico" />
         <Grid container sx={{ height: "100vh" }}>
           {children}

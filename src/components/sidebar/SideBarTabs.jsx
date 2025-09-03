@@ -14,6 +14,8 @@ const SidebarTabs = () => {
       allowScrollButtonsMobile
       value={value}
       onChange={handleChange}
+      indicatorColor="secondary"
+      textColor="secondary"
     >
       {data.map((tab, index) => (
         <Tab

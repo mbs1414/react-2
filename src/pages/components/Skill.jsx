@@ -15,8 +15,8 @@ const Skill = ({ icon, color, name, value }) => {
         sx={{
           "&::before, &::after": {
             borderColor: `${color}.main`,
-            mt: 1,
           },
+          mt: 3,
         }}
       >
         <Chip

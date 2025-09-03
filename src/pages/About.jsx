@@ -65,6 +65,7 @@ const About = () => {
         overflowY: "scroll",
       }}
     >
+      <title>انوش | درباره من</title>
       <CardContent>
         <Grid
           container
